@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "6aee1cd3-b688-44bb-9620-2117a095d47c",
+		"name": "HealthCareApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27680573"
+	},
+	"item": [
+		{
+			"name": "All Employee Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 00ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"         \r",
+							"    \r",
+							"\r",
+							"    \"status\": \"success\",\r",
+							"    \"data\": [\r",
+							"        {\r",
+							"            \"id\": 1,\r",
+							"            \"employee_name\": \"Tiger Nixon\",\r",
+							"            \"employee_salary\": 320800,\r",
+							"            \"employee_age\": 61,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 2,\r",
+							"            \"employee_name\": \"Garrett Winters\",\r",
+							"            \"employee_salary\": 170750,\r",
+							"            \"employee_age\": 63,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 3,\r",
+							"            \"employee_name\": \"Ashton Cox\",\r",
+							"            \"employee_salary\": 86000,\r",
+							"            \"employee_age\": 66,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 4,\r",
+							"            \"employee_name\": \"Cedric Kelly\",\r",
+							"            \"employee_salary\": 433060,\r",
+							"            \"employee_age\": 22,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 5,\r",
+							"            \"employee_name\": \"Airi Satou\",\r",
+							"            \"employee_salary\": 162700,\r",
+							"            \"employee_age\": 33,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 6,\r",
+							"            \"employee_name\": \"Brielle Williamson\",\r",
+							"            \"employee_salary\": 372000,\r",
+							"            \"employee_age\": 61,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 7,\r",
+							"            \"employee_name\": \"Herrod Chandler\",\r",
+							"            \"employee_salary\": 137500,\r",
+							"            \"employee_age\": 59,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 8,\r",
+							"            \"employee_name\": \"Rhona Davidson\",\r",
+							"            \"employee_salary\": 327900,\r",
+							"            \"employee_age\": 55,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 9,\r",
+							"            \"employee_name\": \"Colleen Hurst\",\r",
+							"            \"employee_salary\": 205500,\r",
+							"            \"employee_age\": 39,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 10,\r",
+							"            \"employee_name\": \"Sonya Frost\",\r",
+							"            \"employee_salary\": 103600,\r",
+							"            \"employee_age\": 23,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 11,\r",
+							"            \"employee_name\": \"Jena Gaines\",\r",
+							"            \"employee_salary\": 90560,\r",
+							"            \"employee_age\": 30,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 12,\r",
+							"            \"employee_name\": \"Quinn Flynn\",\r",
+							"            \"employee_salary\": 342000,\r",
+							"            \"employee_age\": 22,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 13,\r",
+							"            \"employee_name\": \"Charde Marshall\",\r",
+							"            \"employee_salary\": 470600,\r",
+							"            \"employee_age\": 36,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 14,\r",
+							"            \"employee_name\": \"Haley Kennedy\",\r",
+							"            \"employee_salary\": 313500,\r",
+							"            \"employee_age\": 43,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 15,\r",
+							"            \"employee_name\": \"Tatyana Fitzpatrick\",\r",
+							"            \"employee_salary\": 385750,\r",
+							"            \"employee_age\": 19,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 16,\r",
+							"            \"employee_name\": \"Michael Silva\",\r",
+							"            \"employee_salary\": 198500,\r",
+							"            \"employee_age\": 66,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 17,\r",
+							"            \"employee_name\": \"Paul Byrd\",\r",
+							"            \"employee_salary\": 725000,\r",
+							"            \"employee_age\": 64,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 18,\r",
+							"            \"employee_name\": \"Gloria Little\",\r",
+							"            \"employee_salary\": 237500,\r",
+							"            \"employee_age\": 59,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 19,\r",
+							"            \"employee_name\": \"Bradley Greer\",\r",
+							"            \"employee_salary\": 132000,\r",
+							"            \"employee_age\": 41,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 20,\r",
+							"            \"employee_name\": \"Dai Rios\",\r",
+							"            \"employee_salary\": 217500,\r",
+							"            \"employee_age\": 35,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 21,\r",
+							"            \"employee_name\": \"Jenette Caldwell\",\r",
+							"            \"employee_salary\": 345000,\r",
+							"            \"employee_age\": 30,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 22,\r",
+							"            \"employee_name\": \"Yuri Berry\",\r",
+							"            \"employee_salary\": 675000,\r",
+							"            \"employee_age\": 40,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 23,\r",
+							"            \"employee_name\": \"Caesar Vance\",\r",
+							"            \"employee_salary\": 106450,\r",
+							"            \"employee_age\": 21,\r",
+							"            \"profile_image\": \"\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 24,\r",
+							"            \"employee_name\": \"Doris Wilder\",\r",
+							"            \"employee_salary\": 85600,\r",
+							"            \"employee_age\": 23,\r",
+							"            \"profile_image\": \"\"\r",
+							"        }\r",
+							"    ],\r",
+							"    \"message\": \"Successfully! All records has been fetched.\"\r",
+							"});\r",
+							"});\r",
+							"\t\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single empolyee details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+							"\r",
+							"    pm.test(\"Status code name has string\", function () {\r",
+							"        pm.response.to.have.status(\"OK\");\r",
+							"    });\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"   \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type header is application/json\", function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json' );\r",
+							"});\r",
+							"pm.test(\"Server\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"   \r",
+							"});\r",
+							"pm.test(\"X-Server-Cache \", function () {\r",
+							"    pm.expect(pm.response.headers.get('X-Server-Cache')).to.eql('false');\r",
+							"});\r",
+							"pm.test(\"Cache-Control\", function () {\r",
+							"    pm.response.to.have.header('Cache-Control');\r",
+							"});\r",
+							"pm.test(\"Cache-Control \",function ()  {\r",
+							"    pm.expect(pm.response.headers.get('Cache-Control')).to.eql('public, max-age=2592000');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 200]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(306);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"        \r",
+							"    \"status\": \"success\",\r",
+							"    \"data\": {\r",
+							"        \"id\": 1,\r",
+							"        \"employee_name\": \"Tiger Nixon\",\r",
+							"        \"employee_salary\": 320800,\r",
+							"        \"employee_age\": 61,\r",
+							"        \"profile_image\": \"\"\r",
+							"    },\r",
+							"    \"message\": \"Successfully! Record has been fetched.\"\r",
+							"});\r",
+							"    });\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/employee/1",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"employee",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Record",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 429\", function () {\r",
+							"    pm.response.to.have.status(429);\r",
+							"});\r",
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([429, 430]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Content-Type header is application/json\", function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json');\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Too Many Requests\");\r",
+							"});\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"success\",\r\n    \"data\": {\r\n        \"id\": 8032\r\n    },\r\n    \"message\": \"Successfully! Record has been added.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/create",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"});\r",
+							"pm.test(\"Server\", function () {\r",
+							"    pm.response.to.have.header(\"Server\");\r",
+							"});\r",
+							"pm.test(\"Vary\", function(){\r",
+							"    pm.expect(pm.response.headers.get('Vary')).to.eql('Accept-Encoding,User-Agent,Origin');\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body({\r",
+							"\r",
+							"    \"message\": \"Error Occured! Page Not found, contact rstapi2example@gmail.com\"\r",
+							"});\r",
+							"});\r",
+							"\r",
+							"        \r",
+							"    \r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Error Occured! Page Not found, contact rstapi2example@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/update/21/",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"update",
+						"21",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 2000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"pm.test(\"X-Nginx-Cache\", function () {\r",
+							"    pm.response.to.have.header(\"X-Nginx-Cache\");\r",
+							"});   \r",
+							"pm.test(\"X-Nginx-Cache\",function ()  {\r",
+							"    pm.expect(pm.response.headers.get('X-Nginx-Cache')).to.eql('WordPress');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/delete/2/",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"delete",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
